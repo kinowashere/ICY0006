@@ -1,8 +1,10 @@
 """Based on https://machinelearningmastery.com/machine-learning-in-python-step-by-step/"""
+import math
 import sys
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from scipy.stats import iqr
 
 
 def print_overview(data_frame, file=''):
@@ -110,5 +112,54 @@ def f_describe_data(df):
 
 def show_distribution_histogram(df, col):
     sns.displot(df[col])
-    plt.savefig('results/' + col + '_distribution_histogram.png')
+    parsed_col = col.replace(" ", "_")
+    parsed_col = parsed_col.lower()
+    plt.savefig('results/' + parsed_col + '_distribution_histogram.png')
     plt.close()
+
+
+def show_tendency_measures(df, columns):
+    printout = ""
+    printout += "\n\nArithmetic Mean\n-------------------------------------"
+    for c in columns:
+        printout += "\n" + c + ": " + df.mean()[c].astype('str')
+    printout += "\n\nMode\n-------------------------------------"
+    for c in columns:
+        printout += "\n" + str(df.mode()[c].astype('str'))
+        printout += "\n"
+    printout += "\nMedian\n-------------------------------------"
+    for c in columns:
+        printout += "\n" + c + ": " + df.median()[c].astype('str')
+
+    print(printout)
+
+    f = open("results/tendency_measures.txt", "w")
+    f.write(printout)
+    f.close()
+
+
+def show_variability_measures(df, columns):
+    printout = ""
+    printout += "Range\n----------------------------------"
+    for c in columns:
+        val = df.max()[c] - df.min()[c]
+        printout += "\n" + c + ": " + str(val.astype('str'))
+
+    printout += "\n\nInterquartile Range\n----------------------------------"
+    for c in columns:
+        printout += "\n" + c + ": " + str(iqr(df[c]).astype('str'))
+
+    printout += "\n\nVariance\n----------------------------------"
+    for c in columns:
+        printout += "\n" + c + ": " + str(df[c].var().astype('str'))
+
+    printout += "\n\nStandard Deviation\n----------------------------------"
+    for c in columns:
+        sd = math.sqrt(df[c].var())
+        printout += "\n" + c + ": " + str(sd)
+
+    print(printout)
+
+    f = open("results/variability_measures.txt", "w")
+    f.write(printout)
+    f.close()

@@ -26,17 +26,21 @@ Lastly, I did a **Distribution Histogram** of the relevant variables, with some 
 
 **Score** seems to have a normal distribution with a mode of around 6. The minimum is 3 and the maximum is 8. This also tells me that there seem to be as many _happy_ countries as there are _unhappy_ ones.
 
-![](results/Score_distribution_histogram.png)
+![](results/score_distribution_histogram.png)
 
 **GDP per Capita** has a spike impeding it to have a normal distribution. It is slightly biased towards the right, which tells me that there's plenty of countries having better GDP per capita than those that don't have it in average.
 
-![](results/GDP per capita_distribution_histogram.png)
+![](results/gdp_per_capita_distribution_histogram.png)
 
 **Healthy Life Expectancy** has a great spike in its mode, telling me that a great number of countries enjoy a certain HLE, although the other ones are distributed equally on the other sides of the spike.
 
-![](results/Healthy life expectancy_distribution_histogram.png)
+![](results/healthy_life_expectancy_distribution_histogram.png)
 
 **Social Support** has a big trend towards the right. The fact that most countries have a great Social Support tells me that having a good value on this variable may not be a big factor.
 
-![](results/Social support_distribution_histogram.png)
+![](results/social_support_distribution_histogram.png)
+
+
+
+
 

@@ -60,7 +60,7 @@ Perceptions of corruption
         Overall rank Country or region      Score  GDP per capita  Social support  Healthy life expectancy  Freedom to make life choices  Generosity  Perceptions of corruption
 count     156.000000               156 156.000000      156.000000      156.000000               156.000000                    156.000000  156.000000                 156.000000
 unique           nan               156        nan             nan             nan                      nan                           nan         nan                        nan
-top              nan         Hong Kong        nan             nan             nan                      nan                           nan         nan                        nan
+top              nan             China        nan             nan             nan                      nan                           nan         nan                        nan
 freq             nan                 1        nan             nan             nan                      nan                           nan         nan                        nan
 mean       78.500000               NaN   5.407096        0.905147        1.208814                 0.725244                      0.392571    0.184846                   0.110603
 std        45.177428               NaN   1.113120        0.398389        0.299191                 0.242124                      0.143289    0.095254                   0.094538
