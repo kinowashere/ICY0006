@@ -7,6 +7,12 @@ import matplotlib.pyplot as plt
 from scipy.stats import iqr
 
 
+def parse_to_filename(var):
+    parsed_col = var.replace(" ", "_")
+    parsed_col = parsed_col.lower()
+    return parsed_col
+
+
 def print_overview(data_frame, file=''):
     if file:
         print('Saving data frame overview to file', file)
@@ -112,8 +118,7 @@ def f_describe_data(df):
 
 def show_distribution_histogram(df, col):
     sns.displot(df[col])
-    parsed_col = col.replace(" ", "_")
-    parsed_col = parsed_col.lower()
+    parsed_col = parse_to_filename(col)
     plt.savefig('results/' + parsed_col + '_distribution_histogram.png')
     plt.close()
 

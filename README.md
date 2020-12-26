@@ -48,7 +48,23 @@ All the measurements can be found as `results/tendency_measures.txt` and `result
 
 **Variability Measures** This part threw some interesting results. Range in this case could have been really important, but since all the data is in different units / ratios, it doesn't apply. The *Standard Deviation* however, let me know that most of the values in `Score` are very close to the mean, compared to those in the other columns. Probably the overall combinaiton of these variables leads to a unified `Score`.
 
+## Stage 3
 
+The **Correlation Matrix** was done in the first step, as well as the analysis on it, so please refer to that part.
+
+---
+
+For the Scatter plot, I will be using `GDP per capita`,  `Social support` and `Healthy life expectancy` as independent variables for the analysis. `Score` still being the dependent variable. I tried both **Linear** and **Polynomial** Regression using [scikit-learn](https://scikit-learn.org/).
+
+![](results/linear_regression_gdp_per_capita_vs_score.png)
+
+I found that, even though there seems to be a correlation between `GDP per capita` and `Score`, visually it may not seem like so. There's a lot of scattering, although it does seem to follow the line of the regression.
+
+![](results/polynomial_regression_healthy_life_expectancy_vs_score.png)
+
+On the other hand, **Polynomial Regression** had some interesting results. Maybe the lows can be considered outliers in this case.
+
+All the 6 Regressions can be found at `results/xxx_regression_xxx.png`
 
 
 
