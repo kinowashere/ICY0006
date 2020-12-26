@@ -40,6 +40,14 @@ Lastly, I did a **Distribution Histogram** of the relevant variables, with some 
 
 ![](results/social_support_distribution_histogram.png)
 
+## Stage 2
+
+All the measurements can be found as `results/tendency_measures.txt` and `results/variability_measures.txt`.
+
+**Tendency Variables** These aren't giving much new information that isn't already visual; I can tell that it aligns with what the graphs say. If anything, it was interesting to find that `Healthy Life Expectancy` is bimodal.
+
+**Variability Measures** This part threw some interesting results. Range in this case could have been really important, but since all the data is in different units / ratios, it doesn't apply. The *Standard Deviation* however, let me know that most of the values in `Score` are very close to the mean, compared to those in the other columns. Probably the overall combinaiton of these variables leads to a unified `Score`.
+
 
 
 

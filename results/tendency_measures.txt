@@ -1,0 +1,37 @@
+
+
+Arithmetic Mean
+-------------------------------------
+Score: 5.407096153846153
+GDP per capita: 0.9109870967741939
+Healthy life expectancy: 0.7299225806451615
+Social support: 1.2166129032258062
+
+Mode
+-------------------------------------
+0    5.207999999999999
+1                  nan
+2                  nan
+Name: Score, dtype: object
+
+0    0.96
+1     nan
+2     nan
+Name: GDP per capita, dtype: object
+
+0                 0.815
+1    0.9990000000000001
+2                   nan
+Name: Healthy life expectancy, dtype: object
+
+0    1.465
+1      nan
+2      nan
+Name: Social support, dtype: object
+
+Median
+-------------------------------------
+Score: 5.3795
+GDP per capita: 0.96
+Healthy life expectancy: 0.789
+Social support: 1.2715

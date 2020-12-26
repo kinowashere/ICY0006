@@ -1,0 +1,27 @@
+Range
+----------------------------------
+Score: 4.916
+GDP per capita: 1.6580000000000001
+Healthy life expectancy: 1.036
+Social support: 1.2460000000000002
+
+Interquartile Range
+----------------------------------
+Score: 1.6399999999999997
+GDP per capita: 0.6154999999999999
+Healthy life expectancy: 0.3277499999999999
+Social support: 0.3949999999999998
+
+Variance
+----------------------------------
+Score: 1.2390358423076921
+GDP per capita: 0.1533943095109261
+Healthy life expectancy: 0.05520872949011447
+Social support: 0.08002737273673258
+
+Standard Deviation
+----------------------------------
+Score: 1.1131198687956712
+GDP per capita: 0.3916558559640416
+Healthy life expectancy: 0.2349653793436694
+Social support: 0.2828910969555821
