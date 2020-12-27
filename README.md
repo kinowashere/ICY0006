@@ -66,5 +66,24 @@ On the other hand, **Polynomial Regression** had some interesting results. Maybe
 
 All the 6 Regressions can be found at `results/xxx_regression_xxx.png`
 
+## Stage 4
 
+<img src="img/melate_logo.png" width="200px">
 
+I picked Mexican [Melate](https://pronosticos.gob.mx/paginas/melate/melate) for my Stage 4 task. The rules are simple: There's a total of 56 unique numbers, of which you play 6. The raffle happens very Wednesday and Sunday. The raffle consists of picking up 6 numbers called _natural_ and 1 number called _additional_. If your 6 numbers match the _natural_ numbers, you win **1st Place**, if 5 of your numbers match the _natural_ numbers and the _additional_ you win **2nd Place**. This goes until only 2 of your numbers match the _natural_ numbers, which is last place. The prize calculated from a total prize pool and is shared between places.
+
+---
+
+My analysis will be of the probabilities to win all the places. Since the order of numbers in the set doesn't matter, and there is no repetition, I will be using the code I wrote in `stage4.py` to calculate the probabilities.
+
+| Place | Numbers | Probability  |
+| ----- | ------- | ------------ |
+| 1     | 6n      | 1:32,468,436 |
+| 2     | 5n+a    | 1:5,411,406  |
+| 3     | 5n      | 1:108,229    |
+| 4     | 4n+a    | 1:88,350     |
+| 5     | 4n      | 1:1,767      |
+| 6     | 3n+a    | 1:4,142      |
+| 7     | 3n      | 1:83         |
+| 8     | 2n+a    | 1:470        |
+| 9     | 2n      | 1:10         |
