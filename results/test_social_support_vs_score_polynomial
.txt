@@ -1,0 +1,3 @@
+Social support vs Score Polynomial
+RMSE: 0.6326149878908472
+MAE: 0.49970617013009666

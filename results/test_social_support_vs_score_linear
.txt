@@ -1,0 +1,3 @@
+Social support vs Score Linear
+RMSE: 0.7973788807607325
+MAE: 0.6137331369621246

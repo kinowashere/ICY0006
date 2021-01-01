@@ -74,7 +74,7 @@ I picked Mexican [Melate](https://pronosticos.gob.mx/paginas/melate/melate) for 
 
 ---
 
-My analysis will be of the probabilities to win all the places. Since the order of numbers in the set doesn't matter, and there is no repetition, I will be using the code I wrote in `stage4.py` to calculate the probabilities.
+My analysis will be of the probabilities to win all the places. Since the order of numbers in the set doesn't matter, and there is no repetition, I will be using the combinatorics `n! / r! (n-r)!` applied to the code I wrote in `stage4.py` to calculate the probabilities.
 
 | Place | Numbers | Probability  |
 | ----- | ------- | ------------ |
@@ -87,3 +87,65 @@ My analysis will be of the probabilities to win all the places. Since the order 
 | 7     | 3n      | 1:83         |
 | 8     | 2n+a    | 1:470        |
 | 9     | 2n      | 1:10         |
+
+## Stage 5
+
+I am still working with the World Happiness Report for the last stage of the project. For this specific task, I have decided to use `GDP per capita`,  `Social support` and `Healthy life expectancy` since they have the most impact on `Score`. The regressions I will be doing are **Linear** and **Polynomial**. The regressions and data management is handled by `scikit-learn`.
+
+### Step 1
+
+Dividing the data happens randomly for each regression. 20% of the data frame goes to the `test` dataset and the 80% left is for the `train` data frame.
+
+```python
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20)
+```
+
+### Step 2
+
+Training the models is done through `LinearRegression` and `SVR`. 
+
+```python
+from sklearn.linear_model import LinearRegression
+
+clf = LinearRegression()
+clf.fit(x_train, y_train)
+y_pred = clf.predict(x_test)
+```
+
+```python
+from sklearn.svm import SVR
+
+clf = SVR(kernel='poly', C=100, gamma='auto', degree=3, epsilon=.1, coef0=1)
+clf.fit(x_train, y_train)
+y_pred = clf.predict(x_test)
+```
+
+### Step 3
+
+To evaluate the performance of the model, I applied both `RMSE` and `MAE`. 
+
+```python
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+
+rmse = sqrt(mean_squared_error(y_test, y_pred))
+mae = mean_absolute_error(y_test, y_pred)
+```
+
+The results of both metrics was printed out into `results/test_{x}_vs_{y}_{regression}.txt` for each of the model regressions and their testing data.
+
+### Report
+
+Reading the data of both type of metrics confirms that there seems to be a correlation between the independent and dependent variables, but it's not as strong as it would seem by the _Correlation Matrix_. With a trained model's visual and numerical figures, we can draw some conclusions regarding the data.
+
+The most important finding of this study: We can predict the values of `Score` based on any of the independent values **with a great margin of error**. Most of the metric tests show results that range from **0.40** to **0.80**. This would mean that, in the best scenario, we can be off for about half a point of the real score for any given independent variable.
+
+However, there's a caveat to this. If the model was to accept a relative margin of error, it would have a far greater result. Take `Social support` vs `Score` with the `Polynomial` regression for instance. Although the `MAE` score is the best in the whole set of metrics, it can be even better. It appears as if the points get scattered more the worse the `Social support` score is. This means that we could adjust the model to that specific range with a lower margin of error and get more accurate results.
+
+![](results/polynomial_regression_social_support_vs_score.png)
+
+---
+
+Second, the strongest correlation seems to be between `GDP per capita` and `Score` with `Linear Regression` as the model. This can be confirmed both visually and numerically since the `MAE` value is the lowest: **0.56** and, as mentioned before, `Social support` vs `Score` with `Polynomial` regression has the best metrics. Both of these can also be confirmed visually, unlike `Healthy life expectancy` vs `Score` on `Linear` regression, which has good metrics, but there's visually a curvature on the data.
+
+![](results/linear_regression_healthy_life_expectancy_vs_score.png)
+

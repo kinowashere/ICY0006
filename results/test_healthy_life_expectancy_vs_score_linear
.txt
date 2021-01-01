@@ -1,0 +1,3 @@
+Healthy life expectancy vs Score Linear
+RMSE: 0.6825557554659872
+MAE: 0.5563976575636208

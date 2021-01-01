@@ -13,3 +13,13 @@ def preprocess_data(df):
     df = df.fillna(df.mean())
 
     return df
+
+
+# Returns y column and dataframe with y column stripped
+def get_y(y_column, df):
+    print("Getting y and stripping off dataframe...")
+    df.sort_values(by=[y_column], inplace=True)
+    y = df[[y_column]]
+    df = df.drop(labels=y_column, axis=1)
+    return df, y
+
