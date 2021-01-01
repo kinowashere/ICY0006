@@ -64,7 +64,7 @@ I found that, even though there seems to be a correlation between `GDP per capit
 
 On the other hand, **Polynomial Regression** had some interesting results. Maybe the lows can be considered outliers in this case.
 
-All the 6 Regressions can be found at `results/xxx_regression_xxx.png`
+All the 6 Regressions can be found at `results/{linear | polynomial}_regression_{x}_vs_{y}.png`
 
 ## Stage 4
 
@@ -97,6 +97,8 @@ I am still working with the World Happiness Report for the last stage of the pro
 Dividing the data happens randomly for each regression. 20% of the data frame goes to the `test` dataset and the 80% left is for the `train` data frame.
 
 ```python
+from sklearn.model_selection import train_test_split
+
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20)
 ```
 
